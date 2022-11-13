@@ -8,5 +8,6 @@
     <orderEntry type="jdk" jdkName="18" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Phone" />
+    <orderEntry type="library" name="mysql-connector-j-8.0.31" level="project" />
   </component>
 </module>
