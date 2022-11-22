@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99ccff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="189.0" layoutY="29.0" style="-fx-border-radius: 9;" text="LogisticHelper" textFill="#515151">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="31.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;">
+         <children>
+            <TextField layoutX="189.0" layoutY="63.0" prefHeight="26.0" prefWidth="222.0" promptText="логин">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <PasswordField layoutX="189.0" layoutY="118.0" prefHeight="26.0" prefWidth="222.0" promptText="пароль">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <RadioButton layoutX="83.0" layoutY="193.0" mnemonicParsing="false" text="Администратор">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="262.0" layoutY="193.0" mnemonicParsing="false" text="Заказчик">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="411.0" layoutY="193.0" mnemonicParsing="false" text="Снабженец">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="12.0" />
+               </font>
+            </RadioButton>
+            <Button layoutX="238.0" layoutY="234.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #99ccff;" text="Вход" textFill="#6b6969">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="230.0" layoutY="20.0" style="-fx-border-radius: 9;" text="Авторизация" textFill="#8e8e8e">
+               <font>
+                  <Font name="Century Gothic" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="561.0" layoutY="14.0" mnemonicParsing="false" text="Х">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
