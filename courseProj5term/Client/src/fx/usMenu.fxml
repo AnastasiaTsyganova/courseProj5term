@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -10,7 +11,46 @@
             <Font name="Arial Rounded MT Bold" size="10.0" />
         </font>
     </Label>
-    <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;" />
+    <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;">
+      <children>
+         <Label fx:id="addText" layoutX="76.0" layoutY="35.0" style="-fx-border-radius: 9;" text="Добавить заявку">
+            <font>
+               <Font name="Century Gothic" size="22.0" />
+            </font>
+         </Label>
+         <Label fx:id="showText" layoutX="76.0" layoutY="90.0" style="-fx-border-radius: 9;" text="Просмотр моих заявок">
+            <font>
+               <Font name="Century Gothic" size="22.0" />
+            </font>
+         </Label>
+         <Button fx:id="addButton" layoutX="458.0" layoutY="34.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Добавить">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="showButton" layoutX="457.0" layoutY="86.0" mnemonicParsing="false" text="Просмотр">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="returnButton" layoutX="76.0" layoutY="237.0" mnemonicParsing="false" text="Возврат в меню входа">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Label fx:id="ratingText" layoutX="76.0" layoutY="140.0" style="-fx-border-radius: 9;" text="Оценка поставщика">
+            <font>
+               <Font name="Century Gothic" size="22.0" />
+            </font>
+         </Label>
+         <Button fx:id="ratingButton" layoutX="458.0" layoutY="139.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Оценить">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+<!--         <Label fx:id="notice" layoutX="349.0" layoutY="243.0" text="У вас нет новых обработанных заявок" />-->
+<!--         <Button fx:id="check" layoutX="484.0" layoutY="267.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="77.0" style="-fx-background-color: #ccffff; -fx-border-color: black;" text="проверить" />-->
+      </children></AnchorPane>
     <Label fx:id="userTypeText" layoutX="154.0" layoutY="30.0" style="-fx-border-radius: 9;" text="Тип доступа: Пользователь" textFill="#8e8e8e">
         <font>
             <Font name="Century Gothic" size="22.0" />

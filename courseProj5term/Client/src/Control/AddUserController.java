@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class WorkerController {
+public class AddUserController {
 
     @FXML
     private ResourceBundle resources;
@@ -23,58 +23,21 @@ public class WorkerController {
     private URL location;
 
     @FXML
-    private Label currentText;
+    private Label Text1;
 
     @FXML
     private Label label;
 
     @FXML
-    private Button processButton;
-
-    @FXML
-    private Label processedText;
-
-    @FXML
-    private Button ratingButton;
-
-    @FXML
-    private Label ratingText;
-
-    @FXML
     private Button returnButton;
 
     @FXML
-    private Button showButton;
-
-    @FXML
-    private Label userTypeText;
-
-    @FXML
     void initialize() {
-        processButton.setOnAction(event -> {
-            processButton.getScene().getWindow().hide();
-            Phone.writeLine("актуальные");
-            openNewScene("/fx/admMenu.fxml");
-        });
-
-        showButton.setOnAction(event -> {
-            showButton.getScene().getWindow().hide();
-            Phone.writeLine("обработанные");
-            openNewScene("/fx/admMenu.fxml");
-        });
-
-        ratingButton.setOnAction(event -> {
-            ratingButton.getScene().getWindow().hide();
-            Phone.writeLine("оценить");
-            openNewScene("/fx/admMenu.fxml");
-        });
-
         returnButton.setOnAction(event -> {
             returnButton.getScene().getWindow().hide();
-            Phone.writeLine("возврат");
-            openNewScene("/fx/Client.fxml");
+           // Phone.writeLine("возврат");
+            openNewScene("/fx/admMenu.fxml");
         });
-
     }
 
     public void openNewScene(String window)

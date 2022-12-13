@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 import between.Phone;
 import com.mysql.cj.xdevapi.Client;
@@ -47,29 +46,40 @@ public class Controller {
     @FXML
     private RadioButton workType;
 
+        ToggleGroup group = new ToggleGroup();
     @FXML
     void initialize() {
+        admType.setToggleGroup(group);
+        usType.setToggleGroup(group);
+        workType.setToggleGroup(group);
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle){
+                // получаем выбранный элемент RadioButton
+                RadioButton selection = admType;
+                selection = (RadioButton) group.getSelectedToggle();
+                // RadioButton selection = (RadioButton) group.getSelectedToggle();
+                if(selection!=null) {
+                    String selectedLbl = selection.getText();
+                    if (Objects.equals(selectedLbl, "Администратор")) {
+                        role = 1;
+                        System.out.println(selectedLbl + ", " + role);
+                    } else if (Objects.equals(selectedLbl, "Заказчик")) {
+                        role = 2;
+                        System.out.println(selectedLbl + ", " + role);
+                    } else if (Objects.equals(selectedLbl, "Снабженец")) {
+                        role = 3;
+                        System.out.println(selectedLbl + ", " + role);
+                    }
+                }
+            };
+        });
         authSignButton.setOnAction(event -> {
             authSignButton.getScene().getWindow().hide();
             int flag = 0;
             while (flag != 1) {
-//                ToggleGroup group = new ToggleGroup();
-//                admType.setToggleGroup(group);
-//                usType.setToggleGroup(group);
-//                workType.setToggleGroup(group);
-//                group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
-//                    public void changed(ObservableValue<? extends Toggle> ov,
-//                                        Toggle old_toggle, Toggle new_toggle) {
-//                        if (group.getSelectedToggle() != null) {
-//                RadioButton selection = (RadioButton) group.getSelectedToggle();
-//                            String selectedLbl = selection.getText();
-//                            Phone.writeLine(selectedLbl);
-//                        }
-//                    }
-//                });
                 String loginText = login_field.getText().trim();
                 String passwordText = pass_field.getText().trim();
-                group();
+               // group();
                 if (!loginText.equals("") && !passwordText.equals("")) {
                     flag = 1;
                     Phone.writeLine(loginText);
@@ -79,6 +89,7 @@ public class Controller {
                     int res=Integer.parseInt(rez);
                     if(res==0)
                     {
+                        Phone.writeLine("вход");
                         if (role == 1) {
                             openNewScene("/fx/admMenu.fxml");
                         } else if (role == 2) {
@@ -89,7 +100,7 @@ public class Controller {
                     }
                     else if(res==1)
                     {
-                        break;
+                        openNewScene("/fx/warningSingIn.fxml");
                     }
                 }
             }
@@ -119,30 +130,34 @@ public class Controller {
 
     @FXML
     void group(){
-        ToggleGroup group = new ToggleGroup();
-        admType.setToggleGroup(group);
-        usType.setToggleGroup(group);
-        workType.setToggleGroup(group);
-        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle){
-                // получаем выбранный элемент RadioButton
-                RadioButton selection = (RadioButton) group.getSelectedToggle();
-                if(selection!=null) {
-                    String selectedLbl = selection.getText();
-                    if (Objects.equals(selectedLbl, "Администратор")) {
-                        role = 1;
-                        System.out.println(selectedLbl + ", " + role);
-                    } else if (Objects.equals(selectedLbl, "Заказчик")) {
-                        role = 2;
-                        System.out.println(selectedLbl + ", " + role);
-                    } else if (Objects.equals(selectedLbl, "Снабженец")) {
-                        role = 3;
-                        System.out.println(selectedLbl + ", " + role);
-                    }
-                }
-            };
-        });
+     //   System.out.println("00");
+//        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
+//            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle){
+//
+//                System.out.println("11");
+//                // получаем выбранный элемент RadioButton
+//                RadioButton selection = admType;
+//                    selection = (RadioButton) group.getSelectedToggle();
+//               // RadioButton selection = (RadioButton) group.getSelectedToggle();
+//                if(selection!=null) {
+//                    System.out.println("22");
+//                    String selectedLbl = selection.getText();
+//                    if (Objects.equals(selectedLbl, "Администратор")) {
+//                        role = 1;
+//                        System.out.println(selectedLbl + ", " + role);
+//                    } else if (Objects.equals(selectedLbl, "Заказчик")) {
+//                        role = 2;
+//                        System.out.println(selectedLbl + ", " + role);
+//                    } else if (Objects.equals(selectedLbl, "Снабженец")) {
+//                        role = 3;
+//                        System.out.println(selectedLbl + ", " + role);
+//                    }
+//                }
+//            };
+//        });
     }
+
+
 
 
 }

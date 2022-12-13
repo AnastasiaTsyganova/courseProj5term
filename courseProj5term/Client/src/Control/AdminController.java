@@ -1,14 +1,20 @@
 package Control;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import between.Phone;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class AdminController {
-
-    private Phone phone;
 
     @FXML
     private ResourceBundle resources;
@@ -17,24 +23,74 @@ public class AdminController {
     private URL location;
 
     @FXML
-    private Label adminTypeText;
+    private Label admTypeText;
 
     @FXML
     private Label label;
 
     @FXML
+    private Button orderButton;
+
+    @FXML
+    private Label orderControl;
+
+    @FXML
+    private Button returnButton;
+
+    @FXML
+    private Button supplierButton;
+
+    @FXML
+    private Label supplierControl;
+
+    @FXML
+    private Label userControl;
+
+    @FXML
+    private Button usersButton;
+
+    @FXML
     void initialize() {
-        assert adminTypeText != null : "fx:id=\"adminTypeText\" was not injected: check your FXML file 'admMenu.fxml'.";
-        assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'admMenu.fxml'.";
+        usersButton.setOnAction(event -> {
+            usersButton.getScene().getWindow().hide();
+            Phone.writeLine("пользователи");
+            openNewScene("/fx/userManage.fxml");
+        });
 
+        supplierButton.setOnAction(event -> {
+            supplierButton.getScene().getWindow().hide();
+            Phone.writeLine("поставщики");
+        });
+
+        orderButton.setOnAction(event -> {
+            orderButton.getScene().getWindow().hide();
+            Phone.writeLine("заказы");
+        });
+
+        returnButton.setOnAction(event -> {
+            returnButton.getScene().getWindow().hide();
+            Phone.writeLine("возврат");
+            openNewScene("/fx/Client.fxml");
+        });
     }
 
-    public void setPhone(Phone phone){
-        this.phone=phone;
+    public void openNewScene(String window)
+    {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(window));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
     }
 
-    public Phone getPhone(){
-        return phone;
-    }
 }
-

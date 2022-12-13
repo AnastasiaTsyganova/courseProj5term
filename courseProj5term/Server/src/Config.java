@@ -1,9 +1,9 @@
 public class Config {
-    protected String dbHost="127.0.0.1";
-    protected String dbPort="3306";
-    protected String dbUser="root";
-    protected String dbPass="PolPin0609";
-    protected String dbName="user";
+    protected static String dbHost="127.0.0.1";
+    protected static String dbPort="3306";
+    protected static String dbUser="root";
+    protected static String dbPass="PolPin0609";
+    protected static String dbName="user";
 
 
 }

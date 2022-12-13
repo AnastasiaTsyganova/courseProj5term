@@ -10,11 +10,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class WorkerController {
+public class ApplicationController {
 
     @FXML
     private ResourceBundle resources;
@@ -23,58 +25,55 @@ public class WorkerController {
     private URL location;
 
     @FXML
-    private Label currentText;
+    private Button addButton;
+
+    @FXML
+    private Label applicationMainText;
 
     @FXML
     private Label label;
 
     @FXML
-    private Button processButton;
+    private TextField nameTextField;
 
     @FXML
-    private Label processedText;
+    private TextField numberTextField;
 
     @FXML
-    private Button ratingButton;
-
+    private ChoiceBox<String> repeatChoiceBox;
     @FXML
-    private Label ratingText;
+    private ChoiceBox<String> SIChoiceBox;
+
+    private final String[] repeat={"Не повторять", "Каждый месяц", "Каждый год"};
+
+    private final String[] SI={"Штука", "Килограмм", "Литр", "Метр"};
 
     @FXML
     private Button returnButton;
 
     @FXML
-    private Button showButton;
-
-    @FXML
-    private Label userTypeText;
-
-    @FXML
     void initialize() {
-        processButton.setOnAction(event -> {
-            processButton.getScene().getWindow().hide();
-            Phone.writeLine("актуальные");
-            openNewScene("/fx/admMenu.fxml");
-        });
-
-        showButton.setOnAction(event -> {
-            showButton.getScene().getWindow().hide();
-            Phone.writeLine("обработанные");
-            openNewScene("/fx/admMenu.fxml");
-        });
-
-        ratingButton.setOnAction(event -> {
-            ratingButton.getScene().getWindow().hide();
-            Phone.writeLine("оценить");
-            openNewScene("/fx/admMenu.fxml");
+        SIChoiceBox.getItems().addAll(SI);
+        repeatChoiceBox.getItems().addAll(repeat);
+        addButton.setOnAction(event -> {
+            addButton.getScene().getWindow().hide();
+        String name = nameTextField.getText().trim();
+            Phone.writeLine(name);
+        String number = numberTextField.getText().trim();
+            Phone.writeLine(number);
+        String SIChoice=SIChoiceBox.getValue();
+            Phone.writeLine(SIChoice);
+        String repeatChoice = repeatChoiceBox.getValue();
+            Phone.writeLine(repeatChoice);
+            Phone.writeLine("добавить2");
+            openNewScene("/fx/add.fxml");
         });
 
         returnButton.setOnAction(event -> {
             returnButton.getScene().getWindow().hide();
             Phone.writeLine("возврат");
-            openNewScene("/fx/Client.fxml");
+            openNewScene("/fx/usMenu.fxml");
         });
-
     }
 
     public void openNewScene(String window)
@@ -97,3 +96,4 @@ public class WorkerController {
     }
 
 }
+
