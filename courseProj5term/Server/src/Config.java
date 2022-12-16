@@ -1,3 +1,5 @@
+//уведы, запрет на ввод буквы в заявке, текстовые предупреждения где можно
+
 public class Config {
     protected static String dbHost="127.0.0.1";
     protected static String dbPort="3306";
