@@ -58,9 +58,9 @@ public class SingUpController {
         roleChoiceBox.getItems().addAll(role);
         addButton.setOnAction(event -> {
             addButton.getScene().getWindow().hide();
-            String name = nameTextField.getText().trim();
             Phone.writeLine("добавление");
             System.out.println("singUp добавление");
+            String name = nameTextField.getText().trim();
             Phone.writeLine(name);
             String lastname = lastNameTextField.getText().trim();
             Phone.writeLine(lastname);

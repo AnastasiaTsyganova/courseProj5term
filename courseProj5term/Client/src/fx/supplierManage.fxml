@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99ccff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.UserManageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99ccff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.SupplierManage">
     <Label fx:id="label" layoutX="508.0" layoutY="14.0" prefHeight="16.0" prefWidth="78.0" style="-fx-border-radius: 9;" text="LogisticHelper" textFill="#515151">
         <font>
             <Font name="Arial Rounded MT Bold" size="10.0" />
@@ -13,7 +13,7 @@
     </Label>
     <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;">
         <children>
-            <Label fx:id="singInText" layoutX="76.0" layoutY="32.0" style="-fx-border-radius: 9;" text="Регистрация">
+            <Label fx:id="addText" layoutX="76.0" layoutY="32.0" style="-fx-border-radius: 9;" text="Добавление">
                 <font>
                     <Font name="Century Gothic" size="22.0" />
                 </font>
@@ -23,7 +23,7 @@
                     <Font name="Century Gothic" size="22.0" />
                 </font>
             </Label>
-            <Button fx:id="singInButton" layoutX="428.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Добавить">
+            <Button fx:id="addButton" layoutX="428.0" layoutY="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Добавить">
                 <font>
                     <Font size="14.0" />
                 </font>
@@ -48,18 +48,18 @@
                     <Font size="14.0" />
                 </font>
             </Button>
-         <Label fx:id="showText" layoutX="76.0" layoutY="167.0" style="-fx-border-radius: 9;" text="Просмотр">
-            <font>
-               <Font name="Century Gothic" size="22.0" />
-            </font>
-         </Label>
-         <Button fx:id="showButton" layoutX="428.0" layoutY="166.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Просмотр">
-            <font>
-               <Font size="14.0" />
-            </font>
-         </Button>
+            <Label fx:id="showText" layoutX="76.0" layoutY="167.0" style="-fx-border-radius: 9;" text="Просмотр">
+                <font>
+                    <Font name="Century Gothic" size="22.0" />
+                </font>
+            </Label>
+            <Button fx:id="showButton" layoutX="428.0" layoutY="166.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Просмотр">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
         </children></AnchorPane>
-    <Label fx:id="userTypeText" layoutX="141.0" layoutY="30.0" style="-fx-border-radius: 9;" text="Управление пользователями" textFill="#8e8e8e">
+    <Label fx:id="supplierTypeText" layoutX="144.0" layoutY="30.0" style="-fx-border-radius: 9;" text="Управление поставщиками" textFill="#8e8e8e">
         <font>
             <Font name="Century Gothic" size="22.0" />
         </font>

@@ -94,7 +94,7 @@ import javafx.stage.Stage;
         showButton.setOnAction(event -> {
             showButton.getScene().getWindow().hide();
             Phone.writeLine("показать");
-            openNewScene("/fx/admMenu.fxml");
+            openNewScene("/fx/showApplicationUsers.fxml");
         });
 
         ratingButton.setOnAction(event -> {

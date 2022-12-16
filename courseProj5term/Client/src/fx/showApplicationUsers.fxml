@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99ccff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ShowApplicationUserController">
+    <Label fx:id="label" layoutX="508.0" layoutY="14.0" prefHeight="16.0" prefWidth="78.0" style="-fx-border-radius: 9;" text="LogisticHelper" textFill="#515151">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="10.0" />
+        </font>
+    </Label>
+    <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;">
+        <children>
+            <Button fx:id="returnButton" layoutX="250.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Возврат">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <TableView fx:id="table" editable="true" layoutX="20.0" layoutY="14.0" prefHeight="238.0" prefWidth="560.0" style="-fx-background-color: #dfdfdf;">
+                <columns>
+                    <TableColumn fx:id="idTable" prefWidth="30.0" style="-fx-background-color: #ccffff;" text="id" />
+                    <TableColumn fx:id="nameTable" prefWidth="150.0" style="-fx-background-color: #99ccff;" text="наименование" />
+                    <TableColumn fx:id="countTable" prefWidth="50.0" style="-fx-background-color: #ccffff;" text="колво" />
+                    <TableColumn fx:id="SITable" prefWidth="90.0" style="-fx-background-color: #99ccff;" text="СИ" />
+                    <TableColumn fx:id="repeatTable" prefWidth="120.0" style="-fx-background-color: #ccffff;" text="Повтор*" />
+                    <TableColumn fx:id="statusTable" prefWidth="120.0" style="-fx-background-color: #99ccff;" text="Статус" />
+                </columns>
+            </TableView>
+        </children></AnchorPane>
+    <Label fx:id="showMainText" layoutX="172.0" layoutY="30.0" style="-fx-border-radius: 9;" text="Просмотр моих заявок" textFill="#8e8e8e">
+        <font>
+            <Font name="Century Gothic" size="22.0" />
+        </font>
+    </Label>
+</AnchorPane>

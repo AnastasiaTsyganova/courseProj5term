@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99ccff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ChangeUserLastnameController">
+    <Label fx:id="label" layoutX="508.0" layoutY="14.0" prefHeight="16.0" prefWidth="78.0" style="-fx-border-radius: 9;" text="LogisticHelper" textFill="#515151">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="10.0" />
+        </font>
+    </Label>
+    <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="600.0" style="-fx-background-color: #ccffff;">
+        <children>
+            <Button fx:id="returnButton" layoutX="250.0" layoutY="258.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Возврат">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="searchButton" layoutX="368.0" layoutY="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Поиск">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <TextField fx:id="loginTextField" layoutX="82.0" layoutY="45.0" promptText="логин">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </TextField>
+            <Text layoutX="82.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите логин пользователя, которого хотите изменить">
+                <font>
+                    <Font name="Century Gothic" size="16.0" />
+                </font>
+            </Text>
+            <Button fx:id="changeButton" layoutX="368.0" layoutY="204.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Изменить">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <TableView fx:id="table" editable="true" layoutX="32.0" layoutY="94.0" prefHeight="67.0" prefWidth="535.0">
+                <columns>
+                    <TableColumn fx:id="idTable" prefWidth="35.0" text="id" />
+                    <TableColumn fx:id="nameTable" prefWidth="100.0" text="имя" />
+                    <TableColumn fx:id="lastnameTable" prefWidth="100.0" text="фамилия" />
+                    <TableColumn fx:id="loginTable" prefWidth="100.0" text="логин" />
+                    <TableColumn fx:id="passwordTable" prefWidth="100.0" text="пароль" />
+                    <TableColumn fx:id="roleTable" prefWidth="100.0" text="роль" />
+                </columns>
+            </TableView>
+         <Text layoutX="82.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите новую фамилию">
+            <font>
+               <Font name="Century Gothic" size="16.0" />
+            </font>
+         </Text>
+         <TextField fx:id="lastnameTextField" layoutX="81.0" layoutY="201.0" promptText="фамилия">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </TextField>
+        </children></AnchorPane>
+    <Label fx:id="changeMainText" layoutX="161.0" layoutY="30.0" style="-fx-border-radius: 9;" text="Изменение пользователя" textFill="#8e8e8e">
+        <font>
+            <Font name="Century Gothic" size="22.0" />
+        </font>
+    </Label>
+</AnchorPane>
